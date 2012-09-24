@@ -1,4 +1,7 @@
 Fetcher::Application.routes.draw do
+
+  get "fetch" => "fetch#fetch"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
