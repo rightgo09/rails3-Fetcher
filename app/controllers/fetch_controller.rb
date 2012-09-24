@@ -3,7 +3,8 @@ require "curb"
 class FetchController < ApplicationController
 
   def fetch
-    res = Curl::Easy.perform("http://www.google.co.jp")
+    url = params[:url].presence || "http://www.google.co.jp"
+    res = Curl::Easy.perform(url)
     render :text => res.body_str
   end
 
